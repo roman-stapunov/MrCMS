@@ -66,6 +66,8 @@ namespace MrCMS.Installation
             databaseSettings.DatabaseProviderType = installModel.DatabaseProvider;
 
             _systemConfigurationProvider.SaveSettings(databaseSettings);
+            //temporary workaround. Should be removed
+            _systemConfigurationProvider.UpdateConnectionString(databaseSettings.ConnectionString);
         }
     }
 }

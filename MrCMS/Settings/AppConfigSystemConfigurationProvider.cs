@@ -21,6 +21,9 @@ namespace MrCMS.Settings
         private const string MrCMSSettingsSectionName = "mrcmsSettings";
         private static readonly HashSet<string> CheckedSections = new HashSet<string>();
 
+        //This is workaround for installation time. Should be removed when fixed issue with update connection string
+        string _currentConnectionString = string.Empty;
+
         public void ClearCache()
         {
         }
@@ -229,7 +232,16 @@ namespace MrCMS.Settings
         private object GetConnectionString(string name)
         {
             var connectionString = WebConfigurationManager.ConnectionStrings[name];
+            if ((connectionString == null || string.IsNullOrWhiteSpace(connectionString.ConnectionString)) && !string.IsNullOrWhiteSpace(this._currentConnectionString))
+            {
+                connectionString = new ConnectionStringSettings(name, this._currentConnectionString);
+            }
             return connectionString != null ? connectionString.ConnectionString : null;
+        }
+
+        public void UpdateConnectionString(string connectionString)
+        {
+            this._currentConnectionString = connectionString;
         }
 
         private IsConnectionStringResult IsConnectionString(PropertyInfo property)

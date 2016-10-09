@@ -608,6 +608,7 @@
     <Compile Include="DbConfiguration\Conventions\SiteFilterConvention.cs" />
     <Compile Include="DbConfiguration\Conventions\StringLengthConvention.cs" />
     <Compile Include="DbConfiguration\CoreEventPublisher.cs" />
+    <Compile Include="DbConfiguration\CreatePostgreSqlDatabase.cs" />
     <Compile Include="DbConfiguration\CreateSQLiteDatabase.cs" />
     <Compile Include="DbConfiguration\CreateSqlServer2008Database.cs" />
     <Compile Include="DbConfiguration\CreateSqlServer2012Database.cs" />
@@ -662,6 +663,7 @@
     <Compile Include="DbConfiguration\Overrides\UserRoleOverride.cs" />
     <Compile Include="DbConfiguration\Overrides\WebpageOverride.cs" />
     <Compile Include="DbConfiguration\Overrides\WidgetOverride.cs" />
+    <Compile Include="DbConfiguration\PostgreSqlProvider.cs" />
     <Compile Include="DbConfiguration\PublishedFilterDisabler.cs" />
     <Compile Include="DbConfiguration\ShouldMapAttribute.cs" />
     <Compile Include="DbConfiguration\SiteFilterDisabler.cs" />

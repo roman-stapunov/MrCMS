@@ -9,5 +9,7 @@ namespace MrCMS.Settings
         void SaveSettings(SystemSettingsBase settings);
         void SaveSettings<TSettings>(TSettings settings) where TSettings : SystemSettingsBase, new();
         List<SystemSettingsBase> GetAllSystemSettings();
+
+        void UpdateConnectionString(string connectionString);
     }
 }
