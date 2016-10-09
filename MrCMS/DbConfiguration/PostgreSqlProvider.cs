@@ -21,7 +21,7 @@ namespace MrCMS.DbConfiguration
         public string Type { get { return GetType().FullName; } }
         public IPersistenceConfigurer GetPersistenceConfigurer()
         {
-            var persistenceConfigurer = PostgreSQLConfiguration.Standard.ConnectionString(x => x.Is(_databaseSettings.ConnectionString));
+            var persistenceConfigurer = PostgreSQLConfiguration.PostgreSQL82.ConnectionString(x => x.Is(_databaseSettings.ConnectionString));
 
             persistenceConfigurer.DefaultSchema("public");
 

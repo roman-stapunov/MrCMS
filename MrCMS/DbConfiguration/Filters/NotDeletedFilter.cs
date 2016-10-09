@@ -6,7 +6,7 @@ namespace MrCMS.DbConfiguration.Filters
     {
         public NotDeletedFilter()
         {
-            WithName("NotDeletedFilter").WithCondition("(IsDeleted = 'False' or IsDeleted = 0 or IsDeleted is null)");
+            WithName("NotDeletedFilter").WithCondition("(IsDeleted = 'False' or IsDeleted = '0' or IsDeleted is null)");
         }
     }
 }
