@@ -9,6 +9,11 @@ namespace MrCMS.Web
     {
         protected override void OnApplicationStart()
         {
+#if DEBUG
+            log4net.Config.XmlConfigurator.Configure();
+            var log = log4net.LogManager.GetLogger(typeof(MvcApplication));
+            log.Info("Startup Application");
+#endif
         }
     }
 }
